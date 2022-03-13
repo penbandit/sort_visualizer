@@ -62,7 +62,8 @@ b1 = Button(UI_frame, text="Sort", command=sort, bg=LIGHT_GRAY)
 b1.grid(row=2, column=1, padx=5, pady=5)
 
 # Button to generate the array
-b3 = Button(UI_frame, text="Generating Array", command=generate, bg=LIGHT_GRAY)
+b3 = Button(UI_frame, text="Generate Array", command=generate, bg=LIGHT_GRAY)
+b3.grid(row=2, column=0, padx=5, pady=5)
 
 # Canvas
 canvas = Canvas(window, width=800, height=400, bg=WHITE)
