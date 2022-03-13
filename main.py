@@ -50,7 +50,7 @@ def generate():
 
     data = []
     for i in range(0, 1000):
-        random_value = random.randint(1, 1500)
+        random_value = random.randint(1, 150)
         data.append(random_value)
 
     drawData(data, [BLUE for x in range(len(data))])
