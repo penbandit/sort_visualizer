@@ -67,3 +67,5 @@ b3 = Button(UI_frame, text="Generating Array", command=generate, bg=LIGHT_GRAY)
 # Canvas
 canvas = Canvas(window, width=800, height=400, bg=WHITE)
 canvas.grid(row=1, column=0, padx=10, pady=5)
+
+window.mainloop()
