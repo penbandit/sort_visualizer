@@ -2,6 +2,8 @@ from random import random
 from tkinter import *
 from tkinter import ttk
 import random
+from bubbleSort import bubble_sort
+from mergeSort import merge_sort
 
 #Importing colors from colors.py
 from colors import *
@@ -64,7 +66,14 @@ def set_Speed():
 
 # Function to select algorithm and start sorting
 def sort():
-    pass
+    global data
+    timeTick = set_Speed()
+
+    if algo_Menu.get() == 'Bubble Sort':
+        bubble_sort(data, drawData, timeTick)
+
+    elif algo_Menu.get() == 'Merge Sort':
+        merge_sort(data, 0, len(data)-1, drawData, timeTick)
 
 # UI
 UI_frame = Frame(window, width = 900, height = 300, bg = WHITE)

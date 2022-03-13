@@ -24,7 +24,7 @@ def merge(data, start, mid, end, drawData, timeTick):
         data[start] = tempArray[p]
         start += 1
 
-def emrge_sort(data, start, end, drawData, timeTick):
+def merge_sort(data, start, end, drawData, timeTick):
     if start < end:
         mid = int((start + end) / 2)
         merge_sort(data, start, mid, drawData, timeTick)
