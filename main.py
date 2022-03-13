@@ -25,15 +25,42 @@ data = []
 
 # Function to draw data on the canvas
 def drawData(data, colorarray):
-    pass
+    canvas.delete("all")
+    canvas_width = 800
+    canvas_height = 400
+    x_width = canvas_width / (len(data) + 1)
+    offset = 4
+    spacing = 2
+    normalizedData = [i / max(data) for i in data]
+
+    for i, height in enumerate(normalizedData):
+        x0 = i * x_width + offset + spacing
+        y0 = canvas_height - height * 300
+        x1 = (i + 1) * x_width + offset
+        y1 = canvas_height
+        canvas.create_rectangle(x0, y0, x1, y1, fill=colorarray[i])
+
+    window.update_idletasks()
 
 # Function to generate array with random data
 def generate():
-    pass
+    global data
+
+    data = []
+    for i in range(0, 1000):
+        random_value = random.randint(1, 1500)
+        data.append(random_value)
+
+    drawData(data, [BLUE for x in range(len(data))])
 
 # Function to set sorting speed
 def set_Speed():
-    pass
+    if speed_Menu.get() == 'Slow':
+        return 0.3
+    elif speed_Menu.get() == 'Medium':
+        return 0.1
+    else:
+        return 0.001
 
 # Function to select algorithm and start sorting
 def sort():
